@@ -4,7 +4,6 @@ import helmet from 'helmet';
 import cors from 'cors';
 import compress from 'compression';
 import services from './services';
-import db from './database';
 
 const root = path.join(__dirname, '../../');
 const app = express();
