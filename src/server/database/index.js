@@ -7,9 +7,9 @@ const config = configFile[env];
 
 const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-const db = { 
+const db = {
     models: models(sequelize),
-    sequelize 
-}
+    sequelize,
+};
 
 export default db;

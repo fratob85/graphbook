@@ -1,11 +1,10 @@
 import Sequelize from 'sequelize';
 
-if (process.env.NODE_EAV === 'development') {
-    require('babel-plugin-require-context-hook/register')();
-}
+require('babel-plugin-require-context-hook/register')();
 
 export default (sequelize) => {
     let db = {};
+
     const context = require.context('.', true, /^\.\/(?!index\.js).*\.js$/, 'sync');
 
     context.keys().map(context).forEach(module => {
@@ -13,9 +12,11 @@ export default (sequelize) => {
         db[model.name] = model;
     });
 
-    Object.keys(db).forEach(modelName => {
+    Object.keys(db).forEach((modelName) => {
         if (db[modelName].associate) {
             db[modelName].associate(db);
         }
     });
-}
+
+    return db;
+};
