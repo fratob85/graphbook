@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/node": "^7.0.0",
-    "apollo-server-express": "^2.2.5",
+    "apollo-server-express": "^2.14.2",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-register": "^6.26.0",
     "browserslist": "^4.8.2",
